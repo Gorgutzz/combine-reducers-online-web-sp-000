@@ -1,10 +1,14 @@
-export default function bookApp(
-  state = {
-    authors: [],
-    books: []
-  },
-  action
-) {
+import { combineReducers } from 'redux';
+import uuid from  'uuid';
+
+const rootReducer = combineReducers({
+  authors: authorsReducer,
+  books: booksReducer
+});
+
+export default rootReducer;
+
+function booksReducer(state = [], action) {
   let idx;
   switch (action.type) {
     case "ADD_BOOK":
