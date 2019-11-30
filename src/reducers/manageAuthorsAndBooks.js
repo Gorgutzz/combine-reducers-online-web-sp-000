@@ -15,11 +15,8 @@ function booksReducer(state = [], action) {
       return [...state, action.book];
 
     case "REMOVE_BOOK":
-      idx = state.books.findIndex(book => book.id === action.id);
-      return {
-        ...state,
-        books: [...state.books.slice(0, idx), ...state.books.slice(idx + 1)]
-      };
+      idx = state.findIndex(book => book.id === action.id);
+      return [...state.slice(0, idx), ...state.slice(idx + 1)];
 
     case "ADD_AUTHOR":
       return {
