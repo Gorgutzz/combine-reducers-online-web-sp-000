@@ -21,12 +21,11 @@ function booksReducer(state = [], action) {
       default:
         return state;
       }
-    }
+  }
 
-      function authorsReducer(state = [], action) {
-      let idx;
-      switch (action.type) {
-
+  function authorsReducer(state = [], action) {
+  let idx;
+  switch (action.type) {
     case "ADD_AUTHOR":
       return {
         ...state,
